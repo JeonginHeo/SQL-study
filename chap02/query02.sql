@@ -1,3 +1,4 @@
+```sql
 #SELECT명령
 SELECT * FROM sample21;
 
@@ -33,3 +34,4 @@ SELECT * FROM sample25 WHERE text LIKE 'SQL%';
 
 #중간일치 : 문자열 도중에 존재하는 'SQL'검색
 SELECT * FROM sample25 WHERE text LIKE '%SQL%';
+```
