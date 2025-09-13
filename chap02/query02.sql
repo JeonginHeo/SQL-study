@@ -1,6 +1,3 @@
-## 📌 SQL 기본 예제 모음
-
-```sql
 -- SELECT 명령: 전체 데이터 조회
 SELECT * FROM sample21;
 
