@@ -74,3 +74,6 @@ SELECT amount, ROUND(amount, 1) FROM sample341;
 
 -- 예제 3-24. 10단위를 반올림하기 
 SELECT amount, ROUND(amount, -2) FROM sample341;
+
+-- 예제 3-25. 문자열 결합 
+SELECT CONCAT(quantity, unit) FROM sample35;
