@@ -77,3 +77,14 @@ SELECT amount, ROUND(amount, -2) FROM sample341;
 
 -- 예제 3-25. 문자열 결합 
 SELECT CONCAT(quantity, unit) FROM sample35;
+
+-- 예제 3-26. 시스템 날짜 확인하기 
+SELECT CURRENT_TIMESTAMP;
+
+-- 예제 3-27. 시스템 날짜의 1일 후를 계산하기 
+SELECT CURRENT_DATE + INTERVAL 1 DAY;
+
+-- 예제 3-28. NULL 값을 0으로 변환하기 
+SELECT a, CASE WHEN a IS NULL THEN 0 ELSE a END "a(null=0)"
+    -> FROM sample37;
+
