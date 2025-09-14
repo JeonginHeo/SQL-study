@@ -88,3 +88,27 @@ SELECT CURRENT_DATE + INTERVAL 1 DAY;
 SELECT a, CASE WHEN a IS NULL THEN 0 ELSE a END "a(null=0)"
     -> FROM sample37;
 
+-- 예제 3-29. 성별 코드 변환하기(검색 CASE)
+SELECT a AS "코드",
+    -> CASE
+    ->  WHEN a=1 THEN '남자'
+    ->  WHEN a=2 THEN '여자'
+    ->  ELSE '미지정'
+    -> END AS "성별" FROM sample37;
+
+-- 예제 3-30. 성별 코드 변환하기(단순 CASE)
+SELECT a AS "코드",
+    -> CASE a
+    ->  WHEN 1 THEN '남자'
+    ->  WHEN 2 THEN '여자'
+    ->  ELSE '미지정'
+    -> END AS "성별" FROM sample37;
+
+-- 예제 3-30. 검색 CASE문으로 NULL 판정하기 
+SELECT a AS "코드",
+    -> CASE
+    ->  WHEN a=1 THEN '남자'
+    ->  WHEN a=2 THEN '여자'
+    ->  WHEN a IS NULL THEN '데이터없음'
+    ->  ELSE '미지정'
+    -> END AS "성별" FROM sample37;
