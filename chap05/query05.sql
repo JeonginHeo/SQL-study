@@ -112,3 +112,27 @@ SELECT * FROM sample54;
 
 -- 예제 5-29. 테이블의 행 복사하기 
 INSERT INTO sample542 SELECT * FROM sample543;
+
+-- 예제 5-30. sample551 테이블과 sample552테이블 
+SELECT * FROM sample551; SELECT * FROM sample552;
+
+-- 예제 5-31. EXISTS를 사용해 '있음'으로 갱신하기 
+UPDATE sample551 SET a ='있음' WHERE
+    -> EXISTS (SELECT * FROM sample552 WHERE no2=no);
+SELECT * FROM sample551;
+
+-- 예제 5-32. NOT EXISTS를 사용해 '없음'으로 갱신하기 
+UPDATE sample551 SET a='없음' WHERE
+    -> NOT EXISTS (SELECT * FROM sample552 WHERE no2=no);
+SELECT * FROM sample551;
+
+-- 예제 5-33. 열에 테이블명 붙이기 
+UPDATE sample551 SET a='있음' WHERE
+    -> EXISTS (SELECT * FROM sample552 WHERE sample552.no2=sample551.no);
+
+-- 예제 5-34. IN을 사용해 조건식 기술 
+SELECT * FROM sample551 WHERE no IN(3, 5);
+
+-- 예제 5-35. IN의 오른쪽을 서브쿼리로 지정하기 
+SELECT * FROM sample551 WHERE no IN
+    -> (SELECT no2 FROM sample552);
